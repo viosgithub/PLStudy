@@ -1,20 +1,15 @@
 puts "input origina filename"
-originFile = gets
+originFile = gets.chomp
 puts"input original string"
-origins = gets
+origins = gets.chomp
 puts"input chenged string"
-changes = gets
+changes = gets.chomp
 puts"input new filename"
-newFileName = gets
+newFileName = gets.chomp
 
-r = File.open(originFile)
 w = open(newFileName,"w")
-
-while line = f.gets
-    line = line.gsub(origins,changes)
-    w.puts line
+r = open(originFile)
+while line = r.gets
+    w.write(line.gsub(origins,changes))
 end
-
-r.close
-w.close
 
